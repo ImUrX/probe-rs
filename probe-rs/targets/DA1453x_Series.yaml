@@ -1,0 +1,29 @@
+name: DA1453x Series
+generated_from_pack: true
+pack_file_release: 1.0.4
+variants:
+- name: DA14531
+  cores:
+  - name: main
+    type: armv6m
+    core_access_options: !Arm
+      ap: 0
+      psel: 0
+  memory_map:
+  - !Ram
+    name: IRAM1
+    range:
+      start: 0x7fc0000
+      end: 0x7fcc000
+    cores:
+    - main
+  - !Nvm
+    name: IROM1
+    range:
+      start: 0x0
+      end: 0x24000
+    is_boot_memory: true
+    cores:
+    - main
+  flash_algorithms: []
+flash_algorithms: []
